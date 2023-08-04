@@ -1,9 +1,9 @@
 #include <AFMotor.h>
-int H_Speed=180;
-int L_Speed=120;
+int H_Speed=120;
+int L_Speed=180;
 
-AF_DCMotor L_Motor(1);
-AF_DCMotor R_Motor(3);
+AF_DCMotor R_Motor(1);
+AF_DCMotor L_Motor(3);
 
 void brake(){
     R_Motor.setSpeed(0);
@@ -27,14 +27,8 @@ void backward(){
 
 void turn_180(){
     R_Motor.setSpeed(L_Speed);
-    L_Motor.setSpeed(L_Speed);
+    L_Motor.setSpeed(0);
     R_Motor.run(FORWARD);
-    L_Motor.run(BACKWARD);
-    delay(800);
-    R_Motor.run(BRAKE);
-    L_Motor.run(BRAKE);
-    delay(1000);
-
     
 }
 
